@@ -1,0 +1,57 @@
+\documentclass[a4paper, 12pt]{memoir}
+\usepackage{a4wide}
+\usepackage{fontspec}
+\usepackage[french]{babel}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{pdfpages}  % pour la page de garde
+
+\usepackage{mathtools}
+%\usepackage{varioref}
+
+% lien hypertextes:
+\usepackage[colorlinks=true,citecolor=blue]{hyperref}
+
+% Le plan va jusqu'à la subsection
+\setsecnumdepth{subsection}
+
+% ------------- apparences (pfff, ce que c'est futile tout ça)
+% font
+\defaultfontfeatures{Mapping=tex-text}
+\setmainfont{Linux Libertine O}
+% style de chapitre
+\chapterstyle{bianchi}
+% style des headers
+\setsecheadstyle{\sffamily\Large\bfseries}
+\setsubsecheadstyle{\sffamily\large\bfseries}
+% style des captions
+\captionnamefont{\sffamily\bfseries\tiny}
+
+
+
+
+% ------------- ma pwn macroz
+\newcommand\introduceterm[1]{\textcolor{purple}{#1}{}}
+
+ 
+%\title{Mathonomicon, vol. 1: 101}
+%\author{Le Muchacho Masqué}
+
+\begin{document}
+\thispagestyle{plain}
+\includepdf[pages=1]{page-de-garde.pdf}
+
+\newpage
+
+\tableofcontents
+
+\chapter*{Introduction}
+\addcontentsline{toc}{chapter}{Introduction} 
+\input{./intro.tex}
+
+\chapter{Briques de base}
+\input{./briques.tex}
+
+\end{document}

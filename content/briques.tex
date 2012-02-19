@@ -1,0 +1,230 @@
+Le présent chapitre étant le premier, je m'en vais commencer par le
+commencement. En l'occurrence, l'algèbre Booléenne est au cœur de la
+pensée mathématique. Les notions d'équivalence, d'implications, de
+conjonction, etc. sont tous simplement incontournables aussi nous
+n'allons pas essayer de les contourner. Une fois la logique booléenne
+aquise, on corsera le tout en raisonnant sur des ensembles d'abord de
+façon intuitive puis plus rigoureusement en utilisant des
+quantificateurs. Ensuite, on utilisera ces magnifiques outils
+conceptuels pour construire les entiers (le genre de truc qui est
+vaguement utile puisqu'il se trouve absolument au \emph{centre} des
+maths) et pour voir la notion de fonction (qui est à ranger juste à
+côté des entiers).
+
+\section{Algèbre Booléenne}
+
+
+Nommée ainsi en l'honneur de M. Boole, mathématicien brittanique du
+XIXème siècle, l'algèbre de Boole traite des relations logiques de
+base qu'il peut exister entre différentes déclarations. Comme nous
+allons le voir, on peut associer des variables à ces déclarations et,
+en fait, ce sont ces variables que nous allons étudier. Les-dites
+variables seront nommées ici $x,y$ ou encore $x_1,x_2,$ etc., comme
+l'exige une tradition impliquant DesCartes et des matheux arabes.
+
+\subsection{Opérations de base}
+
+
+Pour passer des déclarations (ou affirmations) aux variables, il
+suffit de procéder de la façon suivante.
+
+Mettons que j'affirme que ``je porte un pantalon''. C'est mon droit le
+plus strict et, si vous voulez mon avis, c'est plutôt mieux comme
+ça. Créons la variable $x$ de telle façon que $x$ vaille 1 si ma
+déclaration est vraie et 0 si elle fausse. Si vous démontrez que
+$x=1$, alors vous savez que je porte un pantalon. Dans le cas
+contraire, vous savez qu'il faut détourner poliment les yeux. Bien.
+
+
+J'affirme maintenant que ``je porte un T-shirt''. Associons à cette
+déclaration la variable $y$, de la même façon que précédemment. Comme
+vous êtes une personne de bonnes mœurs, vous voulez vous assurer de ce
+que je porte au moins un pantalon \emph{ou} un T-shirt. Et comme vous
+êtes une personne pressée, vous ne voulez pas perdre de temps à
+regarder deux variables pour le savoir, en l'occurrence $x$ et
+$y$. Vous aimeriez bien en créer une qui vous donne directement
+l'information voulue. En fait, vous voudriez une variable $z$ telle que:
+\begin{itemize}
+  \item Si $x=1$, alors $z=1$ (si je porte un pantalon, vous êtes content).
+  \item Si $y=1$, alors $z=1$ (si je porte un T-shirt, vous êtes content).
+  \item Si $x=0$ et $y=0$, alors $z=0$ (si je ne porte ni pantalon ni
+    T-shirt, vous n'êtes \emph{pas} content).
+\end{itemize}
+
+Ceci peut se réécrire d'une façon un peu plus redondante mais plus
+facilement généralisable en utilisant une table de vérité. On appelle
+ainsi un tableau qui regroupe toutes les valeurs possibles des
+variables considérées (ici, $x$ et $y$) et qui donne pour chaque
+combinaison la valeur d'une autre variable (ici, $z$). La figure
+\ref{fig:table-ou} donne celle qui nous intéresse.
+
+\begin{figure}[ht]
+  \centering
+  \begin{tabular}{ll|l}
+    x & y & z \\ \hline
+    0 & 0 & 0 \\
+    1 & 0 & 1 \\
+    0 & 1 & 1 \\
+    1 & 1 & 1 \\
+  \end{tabular}
+  \caption{Votre première table de vérité! Que d'émotions!}
+  \label{fig:table-ou}
+\end{figure}
+
+Vous noterez qu'en fait, $z$ est vrai (c'est-à-dire ``vaut'') si $x$
+\emph{ou} $y$ le sont. Du coup, on peut écrire tout simplement que
+``$z = x ~OU~ y$''. Comme on est décidément très pressés, on peut
+écrire ça de façon plus compact: $z = x \lor y$. La table de vérité
+figure \ref{fig:table-ou} est donc tout simplement celle du
+\introduceterm{OU} logique.
+
+Une personne extrêmement à cheval sur le code vestimentaire serait
+cependant rassurée de savoir que je porte un pantalon
+\introduceterm{ET} un T-shirt. Dans ce cas, elle peut se créer une
+nouvelle variable $u$ obéissant à la table de vérité figure
+\ref{fig:table-et}.
+
+\begin{figure}[ht]
+  \centering
+  \begin{tabular}{ll|l}
+    x & y & u \\ \hline
+    0 & 0 & 0 \\
+    1 & 0 & 0 \\
+    0 & 1 & 0 \\
+    1 & 1 & 1 \\
+  \end{tabular}
+  \caption{La table de vérité du ET logique}
+  \label{fig:table-et}
+\end{figure}
+
+Fort logiquement,\footnote{Ce qui est plutôt une bonne chose dans la
+  mesure ou le présent chapitre prétend vous inculquer les bases de la
+  logique formelle} on peut écrire que $u = x~ ET~ y$. Là encore, on
+peut l'abréger en $u = x \land y$.
+
+Imaginons maintenant que je possède une chemise hawaïenne.\footnote{Ce
+  n'est bien sûr pas le cas, j'ai une dignité quand même. C'est juste
+  pour l'exemple.} Créons encore une nouvelle variable $h$ qui soit
+comme précédemment vraie (c'est-à-dire égale à 1) si je la porte et
+fausse dans le cas contraire (donc égale à 0). Dans ce cas, si on
+associe une variable $v$ à votre bonheur d'esthète, il est nécessaire
+que $h$ et $v$ aient des valeurs opposées: si l'un est vrai, l'autre
+doit être faux (et vice-versa). La table de vérité de la relation que
+vous voulez est donnée figure \ref{fig:table-non}.
+
+\begin{figure}[ht]
+  \centering
+  \begin{tabular}{l|l}
+    x & v \\ \hline
+    0 & 1 \\
+    1 & 0 \\
+  \end{tabular}
+  \caption{La table de vérité du NON logique}
+  \label{fig:table-non}
+\end{figure}
+
+Comme toujours, il existe une façon croquignolette d'exprimer l'idée
+que $v$ a la valeur opposée de celle de $h$. On dit que $v$ est la
+\introduceterm{négation} de $h$ et on le note $v = \neg h$.
+
+\plainbreak{2}
+
+Vous connaissez maintenant toutes les opérations logiques de base,
+vous êtes donc prêt à construire un ordinateur et à démontrer
+l'incomplétude de Gödel. Les opérations en question sont:
+
+\begin{description}
+  \item[Disjonction]
+    C'est à dire prendre le OU de deux
+    variables. On la note avec le symbole $\lor$.
+  \item[Conjonction]
+    C'est à dire prendre le ET de deux
+    variables. On la note avec le symbole $\land$.
+  \item[Négation]
+    C'est à dire prendre la valeur opposée d'une
+    variable. On la note avec le symbole $\neg$.
+\end{description}
+
+On appelle \introduceterm{formule} un ensemble de variables logiques
+liées par ces relations, par exemple $(x \land \neg y) \lor z$ ou bien
+$\neg x \lor ((y \land z) \lor u)$
+
+\subsection{Creusons un peu plus}
+
+
+\subsection{Un exemple: résoudre un sudoku}
+
+\subsubsection{Problème}
+
+J'imagine que vous savez tous ce qu'est un sudoku mais, dans le cas
+ou certains de mes lecteurs bien-aimés l'ignoreraient, laissez-moi
+vous en rappeler le principe. On dispose d'une grille de 9 cases par 9
+cases et on doit la remplir avec des chiffres (entre 1 et 9) de telle
+façon que:
+\begin{itemize}
+  \item Le même chiffre n'apparaisse pas deux fois sur une même ligne.
+  \item Le même chiffre n'apparaisse pas deux fois sur une même
+    colonne.
+  \item Le même chiffre n'apparaisse pas deux fois dans l'un des 9
+    sous-carrés de taille 3x3.
+\end{itemize}
+Une instance de sudoku correspond à une telle grille partiellement
+remplie. Le but du jeu est de finir de la remplir en respectant les
+règles sus-mentionnées. Qu'est-ce que ça fait classe de placer
+``sus-mentionné'' dans un texte, ça fait tout de suite très sérieux.
+
+En bon matheux, résoudre \emph{une} grille \emph{particulière} ne nous
+intéresse pas. Ce qu'on veut, c'est résoudre le cas général; c'est à
+dire trouver une stratégie efficace pour résoudre rapidement n'importe
+quelle instance. À la condition d'avoir le programme qui va bien, on
+peut le faire en utilisant des formules logiques.
+
+
+\subsubsection{Stratégie}
+
+Vu que j'ai cassé le suspens en disant qu'on allait le faire en
+utilisant des formules logique, je ne peux pas vous demander de
+trouver cette idée. Surtout que bon, vu que c'est dans une
+sous-section ``exemple'' d'une partie sur l'algèbre de Boole, vous
+pouviez vous douter qu'on allait s'en servir. Mais je m'égare.
+
+Pour pouvoir écrire une formule logique, il nous faut des
+variables. Ça me semble être un début raisonnable, j'espère que vous
+serez d'accord. J'impose unilatéralement l'ensemble de variables
+suivant: les $x_{i,j,k}$.
+
+Il y a trois indices\footnote{C'est les petites lettres après le nom
+  générique de la variable, en l'occurrence $i$, $j$ et $k$.} qui
+correspondent à trois données. $i$ est, comme ce sera très souvent le
+cas ici, l'indice de la ligne d'une case. $j$ est celui de sa
+colonne. Jusque là ça va (j'espère). Maintenant, qu'est-ce que c'est
+que ce $k$? En fait, on va associer à chaque case 9 variables
+correspondant aux neuf chiffres pouvant y résider. $k$ correspond à
+ces 9 chiffres.
+
+Ces variables sont telles que si il y a le chiffre $k$ dans la case de
+la ligne $i$ qui est dans la colonne $j$, alors $x_{i,j,k}$ est
+vrai; $i,j,k$ pouvant varier entre 1 et 9. Par exemple, si $x_{1,1,1}$
+est vrai, alors il y a un 1 dans la première case de la première
+ligne. Si $x_{9,9,5}$ est vrai, alors il y a 5 dans la case tout en
+bas à droite. Si $x_{5,5,1}$ est faux alors il n'y a pas de 1 dans la
+case en plein milieu de la grille. Vous suivez?
+
+Mais pourquoi est-ce qu'on s'embête avec ces variables me
+demanderez-vous? Pour en faire une jolie formule vous répondrai-je! En
+effet, les différentes contraintes évoquées précédemment peuvent se
+traduire en formules logique utilisant des ET, des OU et des NON.
+
+\begin{itemize}
+  \item \emph{Pas deux fois le même chiffre dans une même ligne:}
+    Cette condition peut être réécrite en disant qu'il est impossible
+    d'avoir $x_{i,j,k}$ et $x_{i,j',k}$ vrai en même temps; c'est à
+    dire que sur la ligne $i$; les cases dans les colonnes $j$ et $j'$
+    ne peuvent pas toutes les deux avoir la valeur $k$. En d'autres
+    termes, pour toutes les lignes d'indice $i$ allant de 1 à 9:
+    \begin{equation}
+      \neg ( x_{i,j,k} \land x_{i,j',k})
+    \end{equation}
+  \item \emph{Pas deux fois le même chiffre dans une même colonne:}
+    Cett
+\end{itemize}

@@ -1,0 +1,144 @@
+Mathonomicon
+
+* DONE Introduction
+  CLOSED: [2012-02-14 mar. 17:52]
+** DONE Pourquoi ce document ?
+   CLOSED: [2012-02-14 mar. 00:12]
+*** DONE Mathématique = science laissée pour compte dans la vulgarisation
+    CLOSED: [2012-02-13 lun. 23:17]
+*** DONE Connaissance = pouvoir
+    CLOSED: [2012-02-13 lun. 23:27]
+*** DONE Époque trouble, nécessité d'être critique vis-à-vis de la science en connaissance de cause.
+    CLOSED: [2012-02-13 lun. 23:36]
+*** DONE Informatique inclu dans les maths et informatique = vie
+    CLOSED: [2012-02-13 lun. 23:56]
+*** DONE D'où le présent document, rendant des maths d'un haut niveau accessible à tout un chacun ayant envie de s'y mettre.
+    CLOSED: [2012-02-14 mar. 00:12]
+** DONE Qui suis-je ?
+   CLOSED: [2012-02-14 mar. 17:28]
+*** DONE Histoire de Marian Rejewski
+    CLOSED: [2012-02-14 mar. 17:28]
+*** DONE Donc on s'en fout de qui je suis
+    CLOSED: [2012-02-14 mar. 17:28]
+** DONE Structure et sources d'inspirations
+   CLOSED: [2012-02-14 mar. 17:48]
+*** DONE Mieux de lire dans l'ordre si vous partez de 0*
+    CLOSED: [2012-02-14 mar. 17:30]
+*** DONE Necromicon ? Non. Cryptonomicon ! Pour le style et les blaguinettes, « Poignant's guide to ruby ».
+    CLOSED: [2012-02-14 mar. 17:38]
+*** DONE Structure probablement proche de mes cours de prépas, donc merci à mes profs de maths de l'époque.
+    CLOSED: [2012-02-14 mar. 17:38]
+
+** DONE Chaque chapitre donne une liste de pré-requis: à vous de voir
+   CLOSED: [2012-02-14 mar. 17:52]
+*** DONE Tentative d'être drôle et agréable à lire
+    CLOSED: [2012-02-14 mar. 17:48]
+**** beaucoup d'exemples
+**** applications venant de la « vie réelle »
+**** anecdotes
+**** envolées philosophiques plus ou moins pertinentes
+*** DONE Je donne mes sources quand je m'en souviens. Pas forcément en français cependant…
+    CLOSED: [2012-02-14 mar. 17:52]
+
+
+* TODO Les briques de bases
+** TODO [#A] Logique booléenne
+** TODO [#A] Quantificateurs
+** TODO [#A] Construction des entiers, notions d'axiomes
+** TODO [#C] Incomplétude de Gödel
+** TODO [#A] fonction
+*** TODO injectivité, etc.
+*** TODO cardinalité
+
+
+* TODO Algèbre
+** TODO [#A] Groupes
+** TODO [#A] Anneaux
+** TODO [#A] Corps
+** TODO [#B] Espaces vectoriels
+
+** TODO Applications linéaires
+*** TODO [#A] Calcul matriciel
+*** TODO [#A] Pivot de Gauss
+*** TODO [#C] Cholesky
+*** TODO [#C] SVD
+
+
+* TODO Arithmétique
+** TODO [#A] Addition, soustraction
+** TODO [#A] multiplication
+** TODO [#A] division
+** TODO [#A] Arithmétique modulaire (Z/nZ)
+*** TODO fonctionnement
+*** TODO démonstration de la preuve par neuf
+** TODO [#A] Z/pZ
+** TODO [#C] Indicatrice d'Euler
+** TODO [#C] RSA
+
+
+* TODO [#A] Statistiques
+** TODO moyenne, médiane, écart type
+** TODO chiffres significatifs
+** TODO corrélation
+** TODO paradoxe de Simpson
+
+
+* TODO Analyse
+** TODO [#A] Trigonométrie
+** TODO [#A] Exemples simple de fonction (polynômes)
+** TODO [#A] continuité
+** TODO [#A] dérivabilité
+*** TODO définition exponentielle
+** TODO [#A] intégrabilité (Riemann)
+*** TODO définition logarithme comme intégrale de 1/x
+** TODO [#C] ouverts,fermés
+** TODO [#C] topologie, tribus
+** TODO [#C] intégrabilité (Lebesgues)
+
+
+* TODO Équations différentielles
+** TODO [#A] Définitions, types
+*** TODO Analogie avec la physique
+*** TODO exemples tirés de la physique
+** TODO Méthodes analytiques
+*** TODO [#C] polynome caractéristique
+*** TODO [#A] fonction exponentielle
+*** TODO [#A] isoclines
+** TODO [#C] Méthodes numériques
+*** TODO Différences finies
+*** TODO Éléments finis
+
+
+* TODO Probabilité, statistiques et théorie des jeux
+** TODO [#A] Cas simple
+*** TODO lancer de dés
+*** TODO probabilités conditionnelles
+** TODO [#A] Définitions
+*** TODO densité de probabilité
+*** TODO probabilité conditionnelle (définition formelle)
+
+
+* TODO Informatique théorique
+** TODO [#A] Théorie de la complexité
+*** TODO Calculabilité (Church Turing)
+*** TODO Machine de Turing
+*** TODO Classe de complexité
+** TODO [#C] Théorie de l'information
+*** TODO Entropie
+*** TODO Indice de coïncidence
+
+
+* TODO Cryptographie
+** TODO [#A] César
+*** TODO Principe
+*** TODO attaque statistique
+*** TODO indice de coïncidence
+** TODO [#A] Vigenère, Hill
+*** TODO kasiki
+** TODO [#A] Différents types d'attaques
+*** TODO clair caché
+*** TODO clair connu
+*** TODO clair choisi
+** TODO [#A] fonctions de hachage
+** TODO [#C] réseau de permutation
+** TODO [#C] Schéma de Feistel
